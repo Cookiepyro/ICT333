@@ -1,4 +1,4 @@
-#ICT333
+#WILSys project by ICT333:SPARKS(P01)
 
 ##About
 This repository contains all the development files of **Project Group P01** (**SPARKS**) for the module **ICT333**. The project being developed is **WIL Management System** (**WILSys**). The system will be used by the following user groups.
