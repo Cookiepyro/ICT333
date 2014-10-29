@@ -110,20 +110,26 @@ ICT333@devbox:~public_html$ chmod -R 775 app/storage
 Finally we make the *Laravel 4* installation visible to *Apache 2*.
 ```
 ICT333@devbox:~$ cd /etc/apache2/sites-available
-ICT333@devbox:/etc/apache2/sites-available$ cp 000-default.conf ICT333.conf
+ICT333@devbox:/etc/apache2/sites-available$ cp 000-default.conf ict333.conf
 ```
 
-Open the file *ICT333.conf* and edit the section *<VirtualHost *:80>* by changing *DocumentRoot*, change _aelindgard_ to your _username_.
+Open the file *ICT333.conf* and edit the section *<VirtualHost *:80>* by changing *DocumentRoot*, change _user_ to your _username_.
 ```
   ServerAdmin webmaster@localhost  
-  DocumentRoot /home/aelindgard/public_html/public
+  DocumentRoot /home/user/public_html/public
 ```
 
 Add the following section after *DocumentRoot*.
 ```
- <Directory /home/aelindgard/public_html/public>  
+ <Directory /home/user/public_html/public>  
       Options Indexes FollowSymLinks  
       AllowOverride All  
       Require all granted  
 </Directory>  
+```
+
+Now tell *Apache 2* to serve the *Laravel 4* web app by typing:
+```
+ICT333@devbox:~$ sudo a2ensite ict333
+ICT333@devbox:~$ sudo apache2 restart
 ```
